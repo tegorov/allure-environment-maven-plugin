@@ -72,9 +72,9 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>ru.tegorov</groupId>
-                <artifactId>allure-env-maven-plugin</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <groupId>com.github.tegorov</groupId>
+                <artifactId>allure-environment-maven-plugin</artifactId>
+                <version>0.1.0</version>
                 <executions>
                     <execution>
                         <goals>

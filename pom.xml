@@ -3,13 +3,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ru.tegorov</groupId>
-    <artifactId>allure-env-maven-plugin</artifactId>
+    <groupId>com.github.tegorov</groupId>
+    <artifactId>allure-environment-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>0.0.1-SNAPSHOT</version>
-
-    <name>allure-env-maven-plugin Maven Mojo</name>
-    <url>http://maven.apache.org</url>
+    <version>0.1.0</version>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Maven plugin generating environment.properties for Allure report</description>
+    <url>https://github.com/tegorov/allure-environment-maven-plugin</url>
 
     <properties>
         <maven.compiler.target>8</maven.compiler.target>
