@@ -25,9 +25,11 @@ import org.apache.maven.plugins.annotations.Parameter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 
-@Mojo(name = "allure-environment", defaultPhase = LifecyclePhase.VALIDATE)
+@Mojo(name = "allure-environment", defaultPhase = LifecyclePhase.TEST)
 public class AllureEnvironmentGenerateMojo extends AbstractMojo {
 
     private static final String ALLURE_ENVIRONMENT_PROPERTIES = "environment.properties";
@@ -35,7 +37,10 @@ public class AllureEnvironmentGenerateMojo extends AbstractMojo {
     @Parameter(required = true, readonly = true)
     protected Properties properties;
 
-    @Parameter(defaultValue = "target/allure-results", readonly = true)
+    @Parameter(defaultValue = "${project.build.directory}", readonly = true)
+    protected String buildDirectory;
+
+    @Parameter(property = "allure.results.directory", defaultValue = "allure-results", readonly = true)
     protected String allureResultsDirectory;
 
     public void execute() throws MojoExecutionException {
@@ -46,10 +51,12 @@ public class AllureEnvironmentGenerateMojo extends AbstractMojo {
             return;
         }
 
-        File allureResultsDir = new File(allureResultsDirectory);
-        allureResultsDir.mkdirs();
+        Path targetPath = Paths.get(buildDirectory);
+        Path allureResultsPath = Paths.get(allureResultsDirectory);
+        File allureResultsFile = targetPath.resolve(allureResultsPath).toFile();
+        allureResultsFile.mkdirs();
 
-        File propertiesFile = new File(allureResultsDirectory, ALLURE_ENVIRONMENT_PROPERTIES);
+        File propertiesFile = new File(allureResultsFile, ALLURE_ENVIRONMENT_PROPERTIES);
         if (propertiesFile.exists()) {
             propertiesFile.delete();
         }
