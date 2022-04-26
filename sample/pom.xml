@@ -81,7 +81,7 @@
             <plugin>
                 <groupId>com.github.tegorov</groupId>
                 <artifactId>allure-environment-maven-plugin</artifactId>
-                <version>0.1.0</version>
+                <version>0.1.1</version>
                 <executions>
                     <execution>
                         <goals>
@@ -90,6 +90,7 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <allureResultsDirectory>../core/target/allure-results</allureResultsDirectory>
                     <properties>
                         <property>
                             <name>os.name</name>
