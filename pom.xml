@@ -6,7 +6,7 @@
     <groupId>com.github.tegorov</groupId>
     <artifactId>allure-environment-maven-plugin</artifactId>
     <packaging>maven-plugin</packaging>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Maven plugin generating environment.properties for Allure report</description>
     <url>https://github.com/tegorov/allure-environment-maven-plugin</url>

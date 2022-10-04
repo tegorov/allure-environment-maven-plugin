@@ -29,7 +29,7 @@ This plugin generates [environment.properties](https://docs.qameta.io/allure/#_e
         <plugin>
             <groupId>com.github.tegorov</groupId>
             <artifactId>allure-environment-maven-plugin</artifactId>
-            <version>0.1.0</version>
+            <version>0.1.2</version>
             <executions>
                 <execution>
                     <goals>

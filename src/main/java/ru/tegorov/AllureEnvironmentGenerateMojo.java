@@ -58,7 +58,7 @@ public class AllureEnvironmentGenerateMojo extends AbstractMojo {
 
         File propertiesFile = new File(allureResultsFile, ALLURE_ENVIRONMENT_PROPERTIES);
         if (propertiesFile.exists()) {
-            propertiesFile.delete();
+            return;
         }
 
         try (FileOutputStream outputStrem = new FileOutputStream(propertiesFile)) {;
